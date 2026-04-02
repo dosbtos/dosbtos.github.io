@@ -1,39 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>DosBtos Indie Game Studio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
 </head>
 <body>
+
+  <nav class="nav">
+    <div class="container">
+      <h1 class="logo">DosBtos</h1>
+      <div class="nav-links">
+        <a href="#games">Games</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
   <header class="hero">
-    <h1>DosBtos</h1>
-    <p>Indie Games. Big Ideas. Small Team.</p>
+    <div class="hero-content">
+      <h1>We Make Weird & Wonderful Games</h1>
+      <p>Small indie studio crafting unforgettable interactive experiences.</p>
+      <a class="cta" href="#games">Explore Games</a>
+    </div>
   </header>
 
-  <section class="about">
-    <h2>About Us</h2>
-    <p>DosBtos is an indie game studio focused on crafting unique, story-driven experiences with memorable gameplay.</p>
-  </section>
-
-  <section class="games">
+  <section id="games" class="section">
     <h2>Our Games</h2>
-    {% for game in site.data.games %}
-      <div class="game-card">
+    <div class="grid">
+      {% for game in site.data.games %}
+      <div class="card">
+        <div class="card-image"></div>
         <h3>{{ game.title }}</h3>
         <p>{{ game.description }}</p>
       </div>
-    {% endfor %}
+      {% endfor %}
+    </div>
   </section>
 
-  <section class="contact">
+  <section id="about" class="section alt">
+    <h2>About DosBtos</h2>
+    <p>
+      We're a small indie team focused on gameplay-first design, unique art styles,
+      and meaningful player experiences. We believe games should feel personal.
+    </p>
+  </section>
+
+  <section class="section highlight">
+    <h2>Join Our Journey</h2>
+    <p>Follow development, get updates, and be part of our growing community.</p>
+    <a class="cta" href="#contact">Get in Touch</a>
+  </section>
+
+  <section id="contact" class="section">
     <h2>Contact</h2>
     <p>Email: hello@dosbtos.com</p>
   </section>
 
-  <footer>
+  <footer class="footer">
     <p>© {{ site.time | date: '%Y' }} DosBtos</p>
   </footer>
+
 </body>
 </html>
